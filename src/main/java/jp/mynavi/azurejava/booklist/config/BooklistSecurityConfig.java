@@ -29,7 +29,8 @@ public class BooklistSecurityConfig extends WebSecurityConfigurerAdapter {
         corsConfiguration.setAllowedMethods(Arrays.asList("POST","GET"));           // (4) 許可するHTTPメソッド
         corsConfiguration.addAllowedHeader(CorsConfiguration.ALL);                  // (5) すべてのHTTPヘッダを許可する
         corsConfiguration.addAllowedOrigin("http://localhost:8080");                // (6)許可するオリジン（ローカルテスト用）
-        corsConfiguration.addAllowedOrigin("https://emastrage.z31.web.core.windows.net/");   // (7) 許可するオリジン（Azureストレージ用）（Blob Storage用）
+        corsConfiguration.addAllowedOrigin("https://emastrage.z31.web.core.windows.net");   // (7) 許可するオリジン（Azureストレージ用）（Blob Storage用）
+        corsConfiguration.addAllowedOrigin("https://brave-field-00d0fc600.azurestaticapps.net");   // (7) 許可するオリジン（Azureストレージ用）（Blob Storage用）
 
         UrlBasedCorsConfigurationSource corsSource = new UrlBasedCorsConfigurationSource();
         corsSource.registerCorsConfiguration("/api/**", corsConfiguration);  // (8) このフィルタの対象URL
